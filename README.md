@@ -166,3 +166,20 @@ curl -X POST http://localhost:5074/api/leaverequests/1/approval \
 - **No authentication** — per the brief, single-user access is assumed. An employee selector in the header lets you demo multi-employee scenarios (approvals, HR screens).
 - Settlement history is stored **in memory** (per the brief) and resets when the API restarts.
 - The brief mentions SQLite in one line but specifies **SQL Server** in the requirements; SQL Server is used. To switch to SQLite, change the provider in `Program.cs` (`UseSqlite`) and the package reference, then regenerate migrations.
+
+- # 📸 Project Screenshots
+
+## Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+## Apply
+![Apply](screenshots/apply.png)
+
+## Approval
+![Approval](screenshots/approvals.png)
+
+## Leave Type
+![LeaveType](screenshots/leavetype.png)
+
+## Settelments
+![Settelments](screenshots/settelments.png)
