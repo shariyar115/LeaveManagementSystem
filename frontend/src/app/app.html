@@ -1,0 +1,36 @@
+<p-toast position="top-right" />
+
+<div class="app-shell">
+  <header class="app-header">
+    <div class="brand">
+      <i class="pi pi-calendar-clock"></i>
+      <span>HR Leaves</span>
+    </div>
+
+    <nav class="app-nav">
+      @for (item of nav; track item.path) {
+        <a [routerLink]="item.path" routerLinkActive="active" class="nav-link">
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </nav>
+
+    <div class="employee-picker">
+      <i class="pi pi-user"></i>
+      <p-select
+        [options]="state.employees()"
+        optionLabel="name"
+        optionValue="id"
+        [ngModel]="state.selectedEmployeeId()"
+        (ngModelChange)="state.selectEmployee($event)"
+        placeholder="Select employee"
+        appendTo="body"
+      />
+    </div>
+  </header>
+
+  <main class="app-main">
+    <router-outlet />
+  </main>
+</div>

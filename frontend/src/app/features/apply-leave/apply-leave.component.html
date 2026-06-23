@@ -1,0 +1,166 @@
+<div class="page-header">
+  <div>
+    <h1>Apply for Leave</h1>
+    <p>Submitting as {{ state.selectedEmployee()?.name }}. Drafts are saved automatically.</p>
+  </div>
+</div>
+
+<div class="apply-layout">
+  <form class="surface-card apply-form" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field">
+      <label for="leaveType">Leave type</label>
+      <p-select
+        inputId="leaveType"
+        [options]="leaveTypes()"
+        optionLabel="name"
+        optionValue="id"
+        formControlName="leaveTypeId"
+        placeholder="Select a leave type"
+        appendTo="body"
+        styleClass="full-width"
+      />
+    </div>
+
+    <div class="date-row">
+      <div class="field">
+        <label for="start">Start date</label>
+        <p-datepicker
+          inputId="start"
+          formControlName="startDate"
+          dateFormat="yy-mm-dd"
+          [minDate]="minDate"
+          [showIcon]="true"
+          appendTo="body"
+        />
+      </div>
+      <div class="field">
+        <label for="end">End date</label>
+        <p-datepicker
+          inputId="end"
+          formControlName="endDate"
+          dateFormat="yy-mm-dd"
+          [minDate]="minDate"
+          [showIcon]="true"
+          appendTo="body"
+        />
+      </div>
+    </div>
+
+    @if (dateOrderInvalid()) {
+      <p-message severity="error" text="Start date cannot be after the end date." />
+    }
+
+    <div class="field">
+      <label for="reason">Reason</label>
+      <textarea
+        pTextarea
+        id="reason"
+        formControlName="reason"
+        rows="3"
+        placeholder="Optional — add context for the approver"
+      ></textarea>
+    </div>
+
+    <div class="form-actions">
+      <p-button
+        type="submit"
+        label="Submit request"
+        icon="pi pi-send"
+        [loading]="submitting()"
+        [disabled]="form.invalid || dateOrderInvalid() || insufficientBalance()"
+      />
+      @if (hasDraft()) {
+        <p-button
+          type="button"
+          label="Clear draft"
+          icon="pi pi-trash"
+          severity="secondary"
+          [text]="true"
+          (onClick)="clearDraft()"
+        />
+      }
+    </div>
+  </form>
+
+  <aside class="apply-aside">
+    <div class="surface-card">
+      <h3>Request summary</h3>
+      <div class="summary-row">
+        <span class="muted">Working days requested</span>
+        <strong>{{ estimatedDays() }}</strong>
+      </div>
+      @if (selectedBalance(); as bal) {
+        <div class="summary-row">
+          <span class="muted">{{ bal.leaveTypeName }} balance</span>
+          <strong>{{ bal.balance }} days</strong>
+        </div>
+        <div class="summary-row">
+          <span class="muted">Balance after this request</span>
+          <strong>{{ bal.balance - estimatedDays() }} days</strong>
+        </div>
+      }
+
+      <div class="summary-messages">
+        @if (insufficientBalance()) {
+          <p-message severity="error" text="Insufficient balance for this request." />
+        } @else if (lowBalanceWarning()) {
+          <p-message severity="warn" text="Heads up: this will leave you with a low balance." />
+        } @else if (estimatedDays() > 0 && selectedBalance()) {
+          <p-message severity="success" text="Balance looks good for this request." />
+        }
+      </div>
+    </div>
+  </aside>
+</div>
+
+<style>
+  .apply-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .date-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .apply-form textarea {
+    width: 100%;
+    resize: vertical;
+  }
+  .form-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .apply-aside h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+  }
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed var(--app-border);
+  }
+  .summary-messages {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  @media (max-width: 860px) {
+    .apply-layout {
+      grid-template-columns: 1fr;
+    }
+    .date-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

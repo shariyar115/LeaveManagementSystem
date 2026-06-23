@@ -1,0 +1,137 @@
+<div class="page-header">
+  <div>
+    <h1>Leave Types</h1>
+    <p>HR configuration of leave types, default allocations and accrual.</p>
+  </div>
+  <p-button label="Add leave type" icon="pi pi-plus" (onClick)="openCreate()" />
+</div>
+
+<p-table
+  [value]="types()"
+  [loading]="loading()"
+  styleClass="p-datatable-sm surface-card"
+  [tableStyle]="{ 'min-width': '48rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th style="width: 10rem">Default days</th>
+      <th style="width: 10rem">Accrued</th>
+      <th style="width: 12rem">Accrual / month</th>
+      <th style="width: 9rem"></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-t>
+    <tr>
+      <td><strong>{{ t.name }}</strong></td>
+      <td>{{ t.defaultDays }}</td>
+      <td>
+        @if (t.isAccrued) {
+          <p-tag value="Accrued" severity="info" />
+        } @else {
+          <p-tag value="Fixed" severity="secondary" />
+        }
+      </td>
+      <td>
+        @if (t.isAccrued) {
+          {{ t.accrualRatePerMonth ?? (t.defaultDays / 12 | number: '1.0-2') }} days
+        } @else {
+          <span class="muted">—</span>
+        }
+      </td>
+      <td class="text-right">
+        <p-button
+          icon="pi pi-pencil"
+          [text]="true"
+          [rounded]="true"
+          pTooltip="Edit"
+          (onClick)="openEdit(t)"
+        />
+        <p-button
+          icon="pi pi-trash"
+          severity="danger"
+          [text]="true"
+          [rounded]="true"
+          pTooltip="Delete"
+          (onClick)="remove(t)"
+        />
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="5" class="muted" style="text-align: center; padding: 1.5rem">
+        No leave types defined yet.
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog
+  [header]="editingId() == null ? 'Add leave type' : 'Edit leave type'"
+  [visible]="dialogVisible()"
+  (visibleChange)="dialogVisible.set($event)"
+  [modal]="true"
+  [style]="{ width: '30rem' }"
+>
+  <form class="dialog-form" [formGroup]="form" (ngSubmit)="save()">
+    <div class="field">
+      <label for="name">Name</label>
+      <input pInputText id="name" formControlName="name" class="full-width" />
+      @if (form.controls.name.touched && form.controls.name.invalid) {
+        <small class="error-text">A name of at least 2 characters is required.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="defaultDays">Default days (annual allocation)</label>
+      <p-inputnumber
+        inputId="defaultDays"
+        formControlName="defaultDays"
+        [min]="0"
+        [max]="366"
+        styleClass="full-width"
+      />
+    </div>
+
+    <div class="field toggle-field">
+      <label for="isAccrued">Is accrued</label>
+      <p-toggleswitch inputId="isAccrued" formControlName="isAccrued" />
+    </div>
+
+    @if (form.controls.isAccrued.value) {
+      <div class="field">
+        <label for="rate">Accrual rate per month (optional)</label>
+        <p-inputnumber
+          inputId="rate"
+          formControlName="accrualRatePerMonth"
+          [minFractionDigits]="0"
+          [maxFractionDigits]="2"
+          placeholder="Defaults to default days ÷ 12"
+          styleClass="full-width"
+        />
+      </div>
+    }
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button label="Cancel" severity="secondary" [text]="true" (onClick)="dialogVisible.set(false)" />
+    <p-button label="Save" icon="pi pi-check" [loading]="saving()" (onClick)="save()" />
+  </ng-template>
+</p-dialog>
+
+<style>
+  .dialog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .toggle-field {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .error-text {
+    color: var(--p-red-500, #e53935);
+  }
+</style>

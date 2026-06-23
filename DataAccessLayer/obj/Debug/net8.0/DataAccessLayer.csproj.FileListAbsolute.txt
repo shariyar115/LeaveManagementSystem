@@ -1,0 +1,17 @@
+D:\Assesment\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.deps.json
+D:\Assesment\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.runtimeconfig.json
+D:\Assesment\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.dll
+D:\Assesment\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.pdb
+D:\Assesment\DataAccessLayer\bin\Debug\net8.0\Common.dll
+D:\Assesment\DataAccessLayer\bin\Debug\net8.0\Common.pdb
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.AssemblyReference.cache
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfo.cs
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAcce.E67BD773.Up2Date
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.dll
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\refint\DataAccessLayer.dll
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.pdb
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.genruntimeconfig.cache
+D:\Assesment\DataAccessLayer\obj\Debug\net8.0\ref\DataAccessLayer.dll

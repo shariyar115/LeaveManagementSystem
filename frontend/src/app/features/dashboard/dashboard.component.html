@@ -1,0 +1,199 @@
+<div class="page-header">
+  <div>
+    <h1>Employee Dashboard</h1>
+    <p>Leave history and balances for {{ state.selectedEmployee()?.name }}.</p>
+  </div>
+  <p-button
+    label="Export CSV"
+    icon="pi pi-download"
+    severity="secondary"
+    [outlined]="true"
+    (onClick)="exportCsv()"
+  />
+</div>
+
+<!-- Leave Balance Widget -->
+@if (summary(); as s) {
+  <div class="cards-grid" style="margin-bottom: 1.5rem">
+    <div class="surface-card balance-total">
+      <span class="muted">Total leave balance</span>
+      <div class="total-value">{{ s.totalBalance }}<small>days</small></div>
+      <span class="muted">across {{ s.balances.length }} leave types</span>
+    </div>
+
+    @for (b of s.balances; track b.leaveTypeId) {
+      <div class="surface-card">
+        <div class="flex-row" style="justify-content: space-between">
+          <strong>{{ b.leaveTypeName }}</strong>
+          @if (b.isAccrued) {
+            <i
+              class="pi pi-chart-line accrual-icon"
+              [pTooltip]="'Accrued to date: ' + b.accruedToDate + ' days'"
+              tooltipPosition="top"
+            ></i>
+          }
+        </div>
+        <div class="balance-line">
+          <span class="balance-number">{{ b.balance }}</span>
+          <span class="muted">/ {{ b.defaultDays }} days</span>
+        </div>
+        <p-progressbar [value]="usedPercent(b.balance, b.defaultDays)" [showValue]="false" />
+      </div>
+    }
+  </div>
+}
+
+<!-- Filters -->
+<div class="toolbar">
+  <div class="field">
+    <label>Search</label>
+    <input
+      type="text"
+      pInputText
+      placeholder="Type, reason, status…"
+      (input)="onSearch($any($event.target).value)"
+    />
+  </div>
+  <div class="field">
+    <label>Status</label>
+    <p-select
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [ngModel]="statusFilter()"
+      (ngModelChange)="statusFilter.set($event)"
+      appendTo="body"
+      styleClass="filter-control"
+    />
+  </div>
+  <div class="field">
+    <label>Leave type</label>
+    <p-select
+      [options]="typeOptions()"
+      optionLabel="label"
+      optionValue="value"
+      [ngModel]="typeFilter()"
+      (ngModelChange)="typeFilter.set($event)"
+      appendTo="body"
+      styleClass="filter-control"
+    />
+  </div>
+  <div class="field">
+    <label>Date range</label>
+    <p-datepicker
+      selectionMode="range"
+      [readonlyInput]="true"
+      placeholder="Any dates"
+      [ngModel]="dateRange()"
+      (ngModelChange)="dateRange.set($event)"
+      appendTo="body"
+    />
+  </div>
+  <div class="spacer"></div>
+  <p-button
+    label="Clear"
+    icon="pi pi-filter-slash"
+    severity="secondary"
+    [text]="true"
+    (onClick)="statusFilter.set(null); typeFilter.set(null); dateRange.set(null)"
+  />
+</div>
+
+<!-- Requests table -->
+<p-table
+  [value]="filteredRequests()"
+  [paginator]="true"
+  [rows]="10"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [loading]="loading()"
+  styleClass="p-datatable-sm surface-card"
+  [tableStyle]="{ 'min-width': '60rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="id" style="width: 5rem">ID <p-sortIcon field="id" /></th>
+      <th pSortableColumn="leaveTypeName">Type <p-sortIcon field="leaveTypeName" /></th>
+      <th pSortableColumn="startDate">Start <p-sortIcon field="startDate" /></th>
+      <th pSortableColumn="endDate">End <p-sortIcon field="endDate" /></th>
+      <th pSortableColumn="daysRequested" style="width: 6rem">Days <p-sortIcon field="daysRequested" /></th>
+      <th pSortableColumn="status">Status <p-sortIcon field="status" /></th>
+      <th>Reason</th>
+      <th style="width: 7rem"></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-r>
+    <tr>
+      <td>{{ r.id }}</td>
+      <td>{{ r.leaveTypeName }}</td>
+      <td>{{ r.startDate | date: 'mediumDate' }}</td>
+      <td>{{ r.endDate | date: 'mediumDate' }}</td>
+      <td>{{ r.daysRequested }}</td>
+      <td><p-tag [value]="r.status" [severity]="statusSeverity(r.status)" /></td>
+      <td>
+        <span [pTooltip]="r.rejectionComment ? 'Rejected: ' + r.rejectionComment : ''">
+          {{ r.reason || '—' }}
+        </span>
+      </td>
+      <td class="text-right">
+        @if (r.status === 'Pending' || r.status === 'Approved') {
+          <p-button
+            icon="pi pi-times"
+            severity="danger"
+            [text]="true"
+            [rounded]="true"
+            pTooltip="Cancel request"
+            (onClick)="cancel(r)"
+          />
+        }
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="8" class="muted" style="text-align: center; padding: 1.5rem">
+        No leave requests found.
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<style>
+  .balance-total {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    color: #fff;
+    border: none;
+  }
+  .balance-total .muted {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .total-value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .total-value small {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 0.35rem;
+  }
+  .balance-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin: 0.4rem 0 0.6rem;
+  }
+  .balance-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .accrual-icon {
+    color: #1976d2;
+    cursor: help;
+  }
+  .filter-control {
+    min-width: 12rem;
+  }
+</style>

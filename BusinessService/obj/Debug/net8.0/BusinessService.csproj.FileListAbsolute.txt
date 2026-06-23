@@ -1,0 +1,17 @@
+D:\Assesment\BusinessService\bin\Debug\net8.0\BusinessService.deps.json
+D:\Assesment\BusinessService\bin\Debug\net8.0\BusinessService.dll
+D:\Assesment\BusinessService\bin\Debug\net8.0\BusinessService.pdb
+D:\Assesment\BusinessService\bin\Debug\net8.0\Common.dll
+D:\Assesment\BusinessService\bin\Debug\net8.0\DataAccessLayer.dll
+D:\Assesment\BusinessService\bin\Debug\net8.0\DataAccessLayer.pdb
+D:\Assesment\BusinessService\bin\Debug\net8.0\Common.pdb
+D:\Assesment\BusinessService\obj\Debug\net8.0\BusinessService.csproj.AssemblyReference.cache
+D:\Assesment\BusinessService\obj\Debug\net8.0\BusinessService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assesment\BusinessService\obj\Debug\net8.0\BusinessService.AssemblyInfoInputs.cache
+D:\Assesment\BusinessService\obj\Debug\net8.0\BusinessService.AssemblyInfo.cs
+D:\Assesment\BusinessService\obj\Debug\net8.0\BusinessService.csproj.CoreCompileInputs.cache
+D:\Assesment\BusinessService\obj\Debug\net8.0\Business.EF4CDBBF.Up2Date
+D:\Assesment\BusinessService\obj\Debug\net8.0\BusinessService.dll
+D:\Assesment\BusinessService\obj\Debug\net8.0\refint\BusinessService.dll
+D:\Assesment\BusinessService\obj\Debug\net8.0\BusinessService.pdb
+D:\Assesment\BusinessService\obj\Debug\net8.0\ref\BusinessService.dll

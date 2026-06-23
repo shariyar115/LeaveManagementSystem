@@ -1,0 +1,118 @@
+<div class="page-header">
+  <div>
+    <h1>Leave Approvals</h1>
+    <p>Review and action all pending leave requests.</p>
+  </div>
+  <div class="flex-row">
+    <p-button
+      label="Approve selected"
+      icon="pi pi-check"
+      severity="success"
+      [disabled]="!selected().length || busy()"
+      (onClick)="bulkApprove()"
+    />
+    <p-button
+      label="Reject selected"
+      icon="pi pi-times"
+      severity="danger"
+      [outlined]="true"
+      [disabled]="!selected().length || busy()"
+      (onClick)="openBulkReject()"
+    />
+  </div>
+</div>
+
+<p-table
+  [value]="pending()"
+  [(selection)]="selected"
+  dataKey="id"
+  [paginator]="true"
+  [rows]="10"
+  [loading]="loading()"
+  styleClass="p-datatable-sm surface-card"
+  [tableStyle]="{ 'min-width': '60rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 3rem"><p-tableHeaderCheckbox /></th>
+      <th>ID</th>
+      <th>Employee</th>
+      <th>Type</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Days</th>
+      <th>Reason</th>
+      <th style="width: 12rem">Action</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-r>
+    <tr>
+      <td><p-tableCheckbox [value]="r" /></td>
+      <td>{{ r.id }}</td>
+      <td>{{ r.employeeName }}</td>
+      <td>{{ r.leaveTypeName }}</td>
+      <td>{{ r.startDate | date: 'mediumDate' }}</td>
+      <td>{{ r.endDate | date: 'mediumDate' }}</td>
+      <td>{{ r.daysRequested }}</td>
+      <td>{{ r.reason || '—' }}</td>
+      <td>
+        <div class="flex-row">
+          <p-button
+            icon="pi pi-check"
+            label="Approve"
+            size="small"
+            severity="success"
+            [disabled]="busy()"
+            (onClick)="approve(r)"
+          />
+          <p-button
+            icon="pi pi-times"
+            size="small"
+            severity="danger"
+            [outlined]="true"
+            pTooltip="Reject"
+            [disabled]="busy()"
+            (onClick)="openReject(r)"
+          />
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="9" class="muted" style="text-align: center; padding: 1.5rem">
+        🎉 No pending requests — all caught up.
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog
+  header="Reject request"
+  [visible]="rejectDialogVisible()"
+  (visibleChange)="rejectDialogVisible.set($event)"
+  [modal]="true"
+  [style]="{ width: '28rem' }"
+>
+  <div class="field">
+    <label for="rejectComment">Rejection comment (optional)</label>
+    <textarea
+      pTextarea
+      id="rejectComment"
+      rows="3"
+      class="full-width"
+      [ngModel]="rejectComment()"
+      (ngModelChange)="rejectComment.set($event)"
+      placeholder="Explain why this request is rejected…"
+    ></textarea>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Cancel"
+      severity="secondary"
+      [text]="true"
+      (onClick)="rejectDialogVisible.set(false)"
+    />
+    <p-button label="Confirm reject" severity="danger" [loading]="busy()" (onClick)="confirmReject()" />
+  </ng-template>
+</p-dialog>

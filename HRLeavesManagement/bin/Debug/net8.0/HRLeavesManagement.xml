@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HRLeavesManagement</name>
+    </assembly>
+    <members>
+        <member name="T:HRLeavesManagement.Controllers.EmployeesController">
+            <summary>Employee lookup (single-user demo, but exposed for the UI selector).</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.EmployeesController.GetAll">
+            <summary>Lists all employees.</summary>
+        </member>
+        <member name="T:HRLeavesManagement.Controllers.LeaveBalancesController">
+            <summary>Leave balances and accrual information per employee.</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveBalancesController.GetSummary(System.Int32)">
+            <summary>
+            Returns the per-type balances and total balance for an employee,
+            including days accrued to date for accruing leave types.
+            </summary>
+            <response code="200">Balance summary for the employee.</response>
+            <response code="404">Employee not found.</response>
+        </member>
+        <member name="T:HRLeavesManagement.Controllers.LeaveRequestsController">
+            <summary>Create, query and action employee leave requests.</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveRequestsController.GetHistory(System.Nullable{System.Int32},System.Nullable{LeaveStatus},System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>Returns leave requests, optionally filtered by employee, status, type and date range.</summary>
+            <response code="200">List of matching leave requests.</response>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveRequestsController.GetPending">
+            <summary>Returns all requests currently awaiting approval.</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveRequestsController.CreateRequest(BusinessService.DTOs.LeaveSubmissionDto)">
+            <summary>Submits a new leave request after validating dates, overlaps and balance.</summary>
+            <response code="201">The created leave request.</response>
+            <response code="400">Validation failed (e.g. "Insufficient leave balance").</response>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveRequestsController.SetApprovalStatus(System.Int32,BusinessService.DTOs.LeaveApprovalDto)">
+            <summary>Approves or rejects a single pending request. Deducts balance on approval.</summary>
+            <response code="204">Decision applied.</response>
+            <response code="400">Invalid status or insufficient balance.</response>
+            <response code="404">Request not found.</response>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveRequestsController.BulkApproval(BusinessService.DTOs.BulkApprovalDto)">
+            <summary>Approves or rejects multiple pending requests in one call.</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveRequestsController.Cancel(System.Int32)">
+            <summary>Cancels a request, restoring the balance if it had already been approved.</summary>
+        </member>
+        <member name="T:HRLeavesManagement.Controllers.LeaveTypesController">
+            <summary>HR management of leave types (custom types with configurable defaults and accrual).</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveTypesController.GetAll">
+            <summary>Lists all leave types (used to populate dropdowns and the HR management grid).</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveTypesController.GetById(System.Int32)">
+            <summary>Gets a single leave type by id.</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveTypesController.Create(BusinessService.DTOs.UpsertLeaveTypeDto)">
+            <summary>Creates a new leave type.</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveTypesController.Update(System.Int32,BusinessService.DTOs.UpsertLeaveTypeDto)">
+            <summary>Updates an existing leave type (including the IsAccrued toggle).</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.LeaveTypesController.Delete(System.Int32)">
+            <summary>Deletes a leave type that is not referenced by any request or balance.</summary>
+        </member>
+        <member name="T:HRLeavesManagement.Controllers.SettlementsController">
+            <summary>Manual balance settlements (e.g. annual reset of unused vacation days) and their audit log.</summary>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.SettlementsController.Adjust(BusinessService.DTOs.SettlementDto)">
+            <summary>Applies a manual balance adjustment and records it in the settlement history.</summary>
+            <response code="200">The updated balance.</response>
+            <response code="404">Employee, leave type or balance not found.</response>
+        </member>
+        <member name="M:HRLeavesManagement.Controllers.SettlementsController.GetHistory(System.Nullable{System.Int32})">
+            <summary>Returns the (in-memory) settlement history, optionally filtered by employee.</summary>
+        </member>
+        <member name="T:HRLeavesManagement.Middleware.GlobalExceptionMiddleware">
+            <summary>
+            Translates domain exceptions into consistent JSON error responses
+            so controllers stay free of repetitive try/catch blocks.
+            </summary>
+        </member>
+    </members>
+</doc>

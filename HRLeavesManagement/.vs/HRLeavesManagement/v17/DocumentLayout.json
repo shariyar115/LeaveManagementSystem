@@ -1,0 +1,305 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Assesment\\HRLeavesManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\data\\leavedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|d:\\assesment\\hrleavesmanagement\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|solutionrelative:controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|d:\\assesment\\hrleavesmanagement\\controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|solutionrelative:controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|d:\\assesment\\hrleavesmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|d:\\assesment\\hrleavesmanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|d:\\assesment\\hrleavesmanagement\\controllers\\leavebalancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|solutionrelative:controllers\\leavebalancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|d:\\assesment\\hrleavesmanagement\\middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1B9652A-20D0-44CB-84C4-9CA72E0640A7}|HRLeavesManagement.csproj|solutionrelative:middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FC2992B-CB5B-458C-9C41-3E9B897AD4CA}|..\\BusinessService\\BusinessService.csproj|d:\\assesment\\businessservice\\dtos\\bulkapprovaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\dataaccesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\models\\leavebalance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\models\\leavetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\models\\leaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FC2992B-CB5B-458C-9C41-3E9B897AD4CA}|..\\BusinessService\\BusinessService.csproj|d:\\assesment\\businessservice\\services\\leaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\repositories\\leaverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FC2992B-CB5B-458C-9C41-3E9B897AD4CA}|..\\BusinessService\\BusinessService.csproj|d:\\assesment\\businessservice\\dtos\\leaveapprovaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D3D1C3-923A-48D9-AF96-965E2F98A4A0}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\assesment\\dataaccesslayer\\interfaces\\ileaverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FC2992B-CB5B-458C-9C41-3E9B897AD4CA}|..\\BusinessService\\BusinessService.csproj|d:\\assesment\\businessservice\\interfaces\\ileaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "D:\\Assesment\\HRLeavesManagement\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployeesController.cs",
+              "ToolTip": "D:\\Assesment\\HRLeavesManagement\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "Controllers\\EmployeesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T06:47:11.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GlobalExceptionMiddleware.cs",
+              "DocumentMoniker": "D:\\Assesment\\HRLeavesManagement\\Middleware\\GlobalExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\GlobalExceptionMiddleware.cs",
+              "ToolTip": "D:\\Assesment\\HRLeavesManagement\\Middleware\\GlobalExceptionMiddleware.cs",
+              "RelativeToolTip": "Middleware\\GlobalExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T06:46:24.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BulkApprovalDto.cs",
+              "DocumentMoniker": "D:\\Assesment\\BusinessService\\DTOs\\BulkApprovalDto.cs",
+              "RelativeDocumentMoniker": "..\\BusinessService\\DTOs\\BulkApprovalDto.cs",
+              "ToolTip": "D:\\Assesment\\BusinessService\\DTOs\\BulkApprovalDto.cs",
+              "RelativeToolTip": "..\\BusinessService\\DTOs\\BulkApprovalDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T06:45:49.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Assesment\\HRLeavesManagement\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\Assesment\\HRLeavesManagement\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-22T17:46:15.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Assesment\\HRLeavesManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Assesment\\HRLeavesManagement\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-22T17:45:05.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LeaveType.cs",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\Models\\LeaveType.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Models\\LeaveType.cs",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\Models\\LeaveType.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Models\\LeaveType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:54:55.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LeaveRequestsController.cs",
+              "DocumentMoniker": "D:\\Assesment\\HRLeavesManagement\\Controllers\\LeaveRequestsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LeaveRequestsController.cs",
+              "ToolTip": "D:\\Assesment\\HRLeavesManagement\\Controllers\\LeaveRequestsController.cs",
+              "RelativeToolTip": "Controllers\\LeaveRequestsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:03:55.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataAccessLayer.csproj",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\DataAccessLayer.csproj",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\DataAccessLayer.csproj",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\DataAccessLayer.csproj",
+              "RelativeToolTip": "..\\DataAccessLayer\\DataAccessLayer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-22T17:54:28.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LeaveRequest.cs",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\Models\\LeaveRequest.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Models\\LeaveRequest.cs",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\Models\\LeaveRequest.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Models\\LeaveRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:54:43.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Models\\Employee.cs",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\Models\\Employee.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:52:35.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LeaveDbContext.cs",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\Data\\LeaveDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\LeaveDbContext.cs",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\Data\\LeaveDbContext.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Data\\LeaveDbContext.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAewC4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:15:13.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LeaveBalancesController.cs",
+              "DocumentMoniker": "D:\\Assesment\\HRLeavesManagement\\Controllers\\LeaveBalancesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LeaveBalancesController.cs",
+              "ToolTip": "D:\\Assesment\\HRLeavesManagement\\Controllers\\LeaveBalancesController.cs",
+              "RelativeToolTip": "Controllers\\LeaveBalancesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T06:47:15.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LeaveService.cs",
+              "DocumentMoniker": "D:\\Assesment\\BusinessService\\Services\\LeaveService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessService\\Services\\LeaveService.cs",
+              "ToolTip": "D:\\Assesment\\BusinessService\\Services\\LeaveService.cs",
+              "RelativeToolTip": "..\\BusinessService\\Services\\LeaveService.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAwwIcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:01:57.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ILeaveService.cs",
+              "DocumentMoniker": "D:\\Assesment\\BusinessService\\Interfaces\\ILeaveService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessService\\Interfaces\\ILeaveService.cs",
+              "ToolTip": "D:\\Assesment\\BusinessService\\Interfaces\\ILeaveService.cs",
+              "RelativeToolTip": "..\\BusinessService\\Interfaces\\ILeaveService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:01:24.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LeaveApprovalDto.cs",
+              "DocumentMoniker": "D:\\Assesment\\BusinessService\\DTOs\\LeaveApprovalDto.cs",
+              "RelativeDocumentMoniker": "..\\BusinessService\\DTOs\\LeaveApprovalDto.cs",
+              "ToolTip": "D:\\Assesment\\BusinessService\\DTOs\\LeaveApprovalDto.cs",
+              "RelativeToolTip": "..\\BusinessService\\DTOs\\LeaveApprovalDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:58:21.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LeaveBalance.cs",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\Models\\LeaveBalance.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Models\\LeaveBalance.cs",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\Models\\LeaveBalance.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Models\\LeaveBalance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:57:56.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LeaveRepository.cs",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\Repositories\\LeaveRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\LeaveRepository.cs",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\Repositories\\LeaveRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\LeaveRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAD4v4QAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:56:48.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ILeaveRepository.cs",
+              "DocumentMoniker": "D:\\Assesment\\DataAccessLayer\\Interfaces\\ILeaveRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\ILeaveRepository.cs",
+              "ToolTip": "D:\\Assesment\\DataAccessLayer\\Interfaces\\ILeaveRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\ILeaveRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:24:06.234Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
